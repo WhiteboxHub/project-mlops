@@ -82,7 +82,8 @@ The goal of this project is to predict Walmart's weekly sales based on historica
 
 3.**Run the script**:
    ```bash
-   python walmart_sales.py```
+   python walmart_sales.py
+   ```
 
 
 ## **Usage**
