@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/innovapathinc/Desktop/Ml_ops_wallmart_sales/mlruns/0/920f07ab7489432d838b792983eeb26c/artifacts
+end_time: 1738697603523
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 920f07ab7489432d838b792983eeb26c
+run_name: mercurial-bug-575
+run_uuid: 920f07ab7489432d838b792983eeb26c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738697603508
+status: 4
+tags: []
+user_id: innovapathinc

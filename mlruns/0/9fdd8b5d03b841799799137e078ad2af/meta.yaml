@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/innovapathinc/Desktop/Ml_ops_wallmart_sales/mlruns/0/9fdd8b5d03b841799799137e078ad2af/artifacts
+end_time: 1738696247045
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9fdd8b5d03b841799799137e078ad2af
+run_name: puzzled-pug-348
+run_uuid: 9fdd8b5d03b841799799137e078ad2af
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738696247037
+status: 3
+tags: []
+user_id: innovapathinc

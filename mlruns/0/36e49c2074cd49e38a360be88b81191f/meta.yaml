@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/innovapathinc/Desktop/Ml_ops_wallmart_sales/mlruns/0/36e49c2074cd49e38a360be88b81191f/artifacts
+end_time: 1738699255747
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 36e49c2074cd49e38a360be88b81191f
+run_name: loud-stag-645
+run_uuid: 36e49c2074cd49e38a360be88b81191f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738699255729
+status: 3
+tags: []
+user_id: innovapathinc
