@@ -11,8 +11,6 @@ This project predicts Walmart's weekly sales using a **Linear Regression** model
 4. [Setup and Installation](#setup-and-installation)
 5. [Usage](#usage)
 6. [Results](#results)
-7. [Contributing](#contributing)
-8. [License](#license)
 
 ---
 
