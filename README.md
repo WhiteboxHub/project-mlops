@@ -80,8 +80,9 @@ The goal of this project is to predict Walmart's weekly sales based on historica
    pip install -r requirements.txt
    ```
 
-3.**Run the script**
-   ```python walmart_sales.py```
+3.**Run the script**:
+   ```bash
+   python walmart_sales.py```
 
 
 ## **Usage**
