@@ -1,0 +1,11 @@
+stages:
+  preprocess:
+    cmd: python pipeline/data_preprocessing.py data/raw.csv
+    dep:
+      - data/raw.csv
+    outs:
+     - data/preprocessed.csv
+  validate:
+    cmd: python pipeline/data-validataion.py data/processed.csv
+    deps:
+      - data/processed.csv
