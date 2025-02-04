@@ -68,11 +68,55 @@ The goal of this project is to predict Walmart's weekly sales based on historica
 ## **Setup and Installation**
 
 ### **Prerequisites**
-- Python 3.9
+- Python 3.12
 - Docker (optional, for containerization)
 
 ### **Steps**
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/WhiteboxHub/mlops.git
-   cd mlops
+   cd mlops 
+
+2.**Install Dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3.**Run the script**
+   ```python walmart_sales.py```
+
+
+## **Usage**
+
+### **Data Preprocessing**
+The script automatically preprocesses the data by:
+- Fixing date formats.
+- Encoding categorical features.
+- Removing outliers using the Interquartile Range (IQR) method.
+
+### **Exploratory Data Analysis (EDA)**
+The script generates visualizations for:
+- **Target variable distribution**:
+  - Histogram and KDE plot of weekly sales.
+- **Categorical and numerical feature distributions**:
+  - Count plots for categorical features.
+  - Histograms and boxplots for numerical features.
+- **Pair plots**:
+  - Analyze relationships between features using pair plots.
+
+### **Model Training and Evaluation**
+- The script trains a **Linear Regression** model.
+- The model is evaluated using the following metrics:
+  - **R² Score**: [Value]
+  - **Mean Absolute Error (MAE)**: [Value]
+  - **Mean Squared Error (MSE)**: [Value]
+- Metrics are logged using **MLflow**, and the model is saved locally.
+
+### **MLflow Tracking**
+To view logged metrics and artifacts:
+1. Start the MLflow UI:
+   ```bash
+   mlflow ui
+   ```
+   
+ 
