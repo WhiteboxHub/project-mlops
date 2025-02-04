@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data-pipeline
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: data-pipeline
+  template:
+    metadata:
+      labels:
+        app: data-pipeline
+    spec:
+      containers:
+      - name: data-pipeline
+        image: 920373024363.dkr.ecr.us-east-1.amazonaws.com/data_pipeline:feb3
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: ecr-registry-secret
