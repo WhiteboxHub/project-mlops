@@ -1,0 +1,5 @@
+outs:
+- md5: 89ae3c68a5ac28f92a1289a8b2d380b6
+  size: 72878
+  hash: md5
+  path: Walmart_split_subset_1.csv
