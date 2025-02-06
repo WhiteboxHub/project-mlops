@@ -3,3 +3,10 @@ __pycache__
 *.pyc
 mlops-env
 */.env
+*.pem
+config
+.dvc/*
+/config.local
+/tmp
+/cache
+*/config
