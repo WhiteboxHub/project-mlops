@@ -2,7 +2,8 @@ import pandas as pd
 
 def clean_data(df):
     # def clean_data(file_path):
-    df = df
+    print(df)
+    print("Columns:", df.columns)
     df.Date = pd.to_datetime(df['Date'], format='%d-%m-%Y')
     df['weekday'] = df.Date.dt.weekday
     df['month'] = df.Date.dt.month

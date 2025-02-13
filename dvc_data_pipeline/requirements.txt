@@ -1,2 +1,4 @@
 boto3
-json
+pandas
+numpy
+python-dotenv

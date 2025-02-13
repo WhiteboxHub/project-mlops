@@ -1,0 +1,6 @@
+{
+  "iam_policies": [
+    "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy",
+    "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+  ]
+}
