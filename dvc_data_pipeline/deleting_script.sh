@@ -39,20 +39,35 @@ echo "🚫 Deleting IAM Policy for Lambda..."
 aws iam delete-role-policy --role-name $ROLE_NAME --policy-name "LambdaExecutionPolicy" || true
 echo "✅ Lambda IAM Policy deleted."
 
-## 5️⃣ Deregister ECS Task Definition
-echo "📌 Deregistering ECS Task Definition..."
-TASK_REVISION=$(aws ecs list-task-definitions --family-prefix $ECS_TASK_DEFINITION --query "taskDefinitionArns[-1]" --output text || true)
-aws ecs deregister-task-definition --task-definition $TASK_REVISION || true
-echo "✅ ECS Task Definition deregistered."
+## 1️⃣ Delete ECS Services within Cluster  
+echo "📌 Deleting ECS Services within cluster: $ECS_CLUSTER_NAME..."  
+SERVICES=$(aws ecs list-services --cluster $ECS_CLUSTER_NAME --query "serviceArns[]" --output text)
 
-## 4️⃣ Delete ECR Repository and Images
-echo "🗑️ Deleting ECR Repository and images..."
-aws ecr delete-repository --repository-name $ECR_REPOSITORY_NAME --force || true
-echo "✅ ECR Repository deleted."
+if [ -n "$SERVICES" ]; then
+    for SERVICE in $SERVICES; do
+        echo "🚫 Deleting ECS Service: $SERVICE..."
+        aws ecs update-service --cluster $ECS_CLUSTER_NAME --service $SERVICE --desired-count 0 || true
+        aws ecs delete-service --cluster $ECS_CLUSTER_NAME --service $SERVICE --force || true
+        echo "✅ Service $SERVICE deleted."
+    done
+else
+    echo "ℹ️ No ECS services found in cluster."
+fi
 
-## 3️⃣ Delete ECS Cluster
-echo "🚫 Deleting ECS Cluster: $ECS_CLUSTER_NAME..."
-aws ecs delete-cluster --cluster $ECS_CLUSTER_NAME || true
+## 2️⃣ Deregister ECS Task Definition  
+echo "📌 Deregistering ECS Task Definition..."  
+TASK_REVISION=$(aws ecs list-task-definitions --family-prefix $ECS_TASK_DEFINITION --query "taskDefinitionArns[-1]" --output text || true)  
+aws ecs deregister-task-definition --task-definition $TASK_REVISION || true  
+echo "✅ ECS Task Definition deregistered."  
+
+## 3️⃣ Delete ECR Repository and Images  
+echo "🗑️ Deleting ECR Repository and images..."  
+aws ecr delete-repository --repository-name $ECR_REPOSITORY_NAME --force || true  
+echo "✅ ECR Repository deleted."  
+
+## 4️⃣ Delete ECS Cluster  
+echo "🚫 Deleting ECS Cluster: $ECS_CLUSTER_NAME..."  
+aws ecs delete-cluster --cluster $ECS_CLUSTER_NAME || true  
 echo "✅ ECS Cluster deleted."
 
 ## 2️⃣ Detach and Delete IAM Role

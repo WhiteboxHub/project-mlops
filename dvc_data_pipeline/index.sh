@@ -142,7 +142,7 @@ eval $CMD
 
 ## 6️⃣ Zip Lambda Function Code
 echo "Zipping Lambda function..."
-zip lambda_function.zip ./lambda_function/lambda_handler.py
+zip lambda_function.zip ./lambda_function/lambda_function.py
 echo "Lambda function zipped."
 
 aws iam put-role-policy \
@@ -159,8 +159,12 @@ aws lambda create-function \
   --handler lambda_function.lambda_handler \
   --zip-file "fileb://lambda_function.zip"
 
-
 echo "Lambda function created."
+
+echo "Lambda function retry attept limiting."
+
+
+echo "Lambda function retry attept limiting created."
 
 aws lambda add-permission \
   --function-name "$LAMBDA_FUNCTION_NAME" \
@@ -183,6 +187,10 @@ aws s3api put-bucket-notification-configuration --bucket $BUCKET_NAME --notifica
             {
               "Name": "prefix",
               "Value": "raw/"
+            },
+             {
+                "Name": "suffix",
+                "Value": ".csv"
             }
           ]
         }
