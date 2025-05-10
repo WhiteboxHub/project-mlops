@@ -1,9 +1,0 @@
-{
-    "LambdaFunctionConfigurations": [
-      {
-        "LambdaFunctionArn": "arn:aws:lambda:us-east-1:920373024363:function:TriggerDockerLambda",
-        "Events": ["s3:ObjectCreated:*"]
-      }
-    ]
-  }
-  

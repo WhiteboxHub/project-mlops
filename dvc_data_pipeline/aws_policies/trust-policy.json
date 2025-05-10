@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": [
+          "s3.amazonaws.com",
+          "lambda.amazonaws.com",
+          "ecs-tasks.amazonaws.com",
+          "states.amazonaws.com",
+          "codepipeline.amazonaws.com",
+          "codebuild.amazonaws.com",
+          "logs.amazonaws.com"
+        ]
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
